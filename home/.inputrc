@@ -1,0 +1,5 @@
+set editing-mode vi
+set completion-ignore-case On
+set completion-query-items 300
+set show-all-if-ambiguous On
+

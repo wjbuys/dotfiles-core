@@ -1,0 +1,47 @@
+require 'pathname'
+
+class ::Pathname
+  def scoped(&block)
+    Dir.chdir(self, &block)
+  end
+end
+
+class Vim < Thor
+  include Thor::Actions
+
+  class_option :force, :type => :boolean, :default => false, :required => false
+
+  desc "updateall", "update all bundled plugins"
+  def updateall
+    plugins = Pathname('.').children.select { |f| f.directory? }
+
+    plugins.each do |plugin|
+      update_plugin plugin
+    end
+  end
+
+  desc "update PLUGIN", "update the specified plugin"
+  def update(plugin)
+    update_plugin Pathname(plugin)
+  end
+
+  private
+  def git(*args)
+    say_status "git", args.join(" "), :white
+    system "git #{args.join(" ")}"
+  end
+
+  def update_plugin(plugin)
+    plugin.scoped do
+      if Pathname(".git").exist?
+        say_status "updating", "#{plugin.basename} (git)"
+        git "reset --hard" if options[:force]
+        unless git "pull --rebase"
+          say_status "failed", plugin.basename, :red
+        end
+      else
+        say_status "skipping", "#{plugin.basename} (unversioned)", :blue
+      end
+    end
+  end
+end

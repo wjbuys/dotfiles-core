@@ -1,0 +1,42 @@
+#!/bin/bash
+alias v='vim -c NERDTree'
+alias gv='gvim -c NERDTree'
+
+alias ll='ls -lAh'
+alias l='ls -CF'
+
+alias pl='ps axf | less'
+alias :q=exit
+
+# Always use 256-color tmux
+alias tmux='tmux -2'
+
+alias tnew="TMUX= tmux new-session -d -s"
+alias trename="tmux rename-session"
+
+alias be="bundle exec"
+alias bi="bundle install"
+alias bu="bundle update"
+alias bc="bundle console"
+
+alias ins="sudo aptitude install -y"
+alias search="aptitude search"
+
+go() {
+  eval "cd $( $HOME/bin/bookmark $1 )"
+}
+
+# Support for hammer.vim (requires system-installed rubygems)
+setup_hammer_vim()
+{
+  ins rubygems
+  sudo gem install github-markup redcarpet wikicloth
+}
+vim()
+{
+  (unset GEM_PATH GEM_HOME; command vim "$@")
+}
+
+if [ -f ~/.aliases.local ]; then
+    source ~/.aliases.local
+fi
