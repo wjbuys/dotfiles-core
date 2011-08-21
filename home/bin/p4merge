@@ -1,0 +1,2 @@
+#!/bin/bash
+~/apps/p4v-2010.1.276058/bin/p4merge "$@"

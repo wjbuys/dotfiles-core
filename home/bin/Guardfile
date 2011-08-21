@@ -1,0 +1,9 @@
+def filetype(file)
+  `file -ib '#{file}'`.strip.split(";").first
+end
+
+guard 'rspec', :version => 2 do
+  watch(%r{^spec/.+_spec\.rb$})
+  watch(%r{.+})     { |m| "spec/lib/#{m[1]}_spec.rb" if filetype(m[1]) =~ /ruby/ }
+end
+

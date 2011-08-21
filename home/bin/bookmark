@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+require 'pathname'
+require 'optparse'
+
+class Bookmarks
+  attr_accessor :bookmark_file, :bookmarks, :mode, :args
+
+  def initialize(args)
+    self.bookmark_file = Pathname(ENV["HOME"]) + ".NERDTreeBookmarks"
+    self.bookmarks = read_bookmarks
+
+    self.mode = :find
+    OptionParser.new do |opts|
+      opts.on("-a", "--add") { self.mode = :add }
+      opts.on("-d", "--delete", "List all bookmarks") { self.mode = :delete }
+      opts.on("-l", "--list", "List all bookmarks") { self.mode = :list }
+      opts.on_tail("-h", "--help", "Show this message") { puts opts; exit }
+    end.parse!(args)
+
+    self.args = args
+  end
+
+  def run
+    send(mode, *args)
+  end
+
+  def read_bookmarks
+    bookmarks = bookmark_file.readlines.map do |line|
+      line = line.strip
+      next unless line.any?
+      line.strip.split(" ")
+    end
+    Hash[bookmarks]
+  end
+
+  def save_bookmarks
+    bookmark_file.open("w+") do |f|
+      bookmarks.each do |k, v|
+        f.puts "#{k} #{v}"
+      end
+    end
+  end
+
+  def find(searchterm)
+    searchterm = Regexp.new(ARGV.first)
+    bookmark_name = bookmarks.keys.grep(searchterm).first
+    bookmark_location = bookmarks[bookmark_name]
+    puts bookmark_location
+  end
+
+  def list
+    width = bookmarks.keys.map{|k| k.length}.max
+    puts bookmarks.map{|k, v| "#{k.ljust(width)} -> #{v}"}.join("\n")
+  end
+
+  def add(name, location)
+    bookmarks[name] = Pathname(location).expand_path.sub(%r{^/rhel5pdi}, '')
+    save_bookmarks
+  end
+
+  def delete(name)
+    bookmarks.delete(name)
+    save_bookmarks
+  end
+end
+
+Bookmarks.new(ARGV).run

@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+require 'pathname'
+
+class Dotfile
+  include FileUtils
+
+  class << self
+    attr_accessor :home, :shared
+    def configure(options)
+      self.home = Pathname(options[:home])
+      self.shared = Pathname(options[:shared])
+    end
+  end
+
+  attr_accessor :name, :home, :shared
+
+  def initialize(name)
+    self.name = name
+    self.home = self.class.home + name
+    self.shared = self.class.shared + name.sub(/^\./, '')
+  end
+
+  def share
+    raise "The dotfile `#{home}` does not exist." unless home.exist?
+    raise "The dotfile `#{name}` seems to be already shared as `#{shared}`" if shared.exist?
+
+    mv home, shared
+    link
+  end
+
+  def link
+    ln_s shared, home
+  end
+end
+
+class DotfileSharer
+  def run(*args)
+    args = [args].flatten
+    share(args.shift)
+  end
+
+  def share(dotfile)
+    dotfile = Dotfile.new(dotfile)
+    puts "Sharing #{dotfile.home} to #{dotfile.shared}"
+    dotfile.share
+  end
+end
+
+if __FILE__ == $0
+  Dotfile.configure(:home => ENV["HOME"], :shared => ENV["HOME"] + "/Dropbox/Configs/dotfiles")
+  DotfileSharer.new.run(ARGV)
+end

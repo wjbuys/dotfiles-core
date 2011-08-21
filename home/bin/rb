@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require "fileutils"
+
+include FileUtils
+
+code = ARGV.first
+result = eval code if code
+p result if result

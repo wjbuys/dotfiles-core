@@ -1,0 +1,13 @@
+#!/bin/bash
+dotfile_root=$HOME/Dropbox/Configs/dotfiles
+
+for dotfile in $dotfile_root/*; do
+  dotfile_name=.$(basename $dotfile)
+  dest=$HOME/$dotfile_name
+  if [[ -L $dest ]]; then
+    rm $dest
+  elif [[ -e $dest ]]; then
+    mv $dest $dest.orig-`date +%Y%m%d%H%M%S`
+  fi
+  ln -s $dotfile $dest
+done
