@@ -161,6 +161,9 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 " enable mouse in terminal
 set mouse=a
 
+" scroll earlier
+set scrolloff=5
+
 " Turn of interminable bloody beeping
 set noerrorbells
 set visualbell
@@ -191,6 +194,12 @@ cabbrev X x
 cabbrev Q q
 cabbrev w!! w !sudo tee % >/dev/null
 
+" Allow lowercase versions of some commands
+cabbrev ack Ack
+cabbrev rview Rview
+cabbrev rcontroller Rcontroller
+cabbrev rmodel Rmodel
+
 " Seriously, backups and swapfiles? Just use git.
 set nobackup
 set noswapfile
@@ -199,9 +208,6 @@ map <Esc>[B <Down>
 
 " <Esc> clears search highlights in normal mode.
 silent! nnoremap <esc> :noh<return><esc>
-
-" Support scrooloose's snipmate bundle
-source ~/.vim/snippets/support_functions.vim
 
 " Use normal irb tags to complete % as <% %> in erb
 autocmd FileType eruby let b:surround_37 = "<% \r %>"
