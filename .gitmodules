@@ -127,15 +127,9 @@
 [submodule "home/.vim/bundle/zoomwin"]
 	path = home/.vim/bundle/zoomwin
 	url = http://github.com/vim-scripts/ZoomWin.git
-[submodule "home/.vim/snippets"]
-	path = home/.vim/snippets
-	url = https://github.com/scrooloose/snipmate-snippets.git
 [submodule "home/.vim/bundle/tlib_vim"]
 	path = home/.vim/bundle/tlib_vim
 	url = http://github.com/tomtom/tlib_vim.git
 [submodule "home/.vim/bundle/vim-addon-mw-utils"]
 	path = home/.vim/bundle/vim-addon-mw-utils
 	url = http://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "home/.vim/bundle/snipmate-snippets"]
-	path = home/.vim/bundle/snipmate-snippets
-	url = http://github.com/honza/snipmate-snippets.git
