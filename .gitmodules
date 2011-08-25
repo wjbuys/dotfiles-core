@@ -133,3 +133,6 @@
 [submodule "home/.vim/bundle/vim-addon-mw-utils"]
 	path = home/.vim/bundle/vim-addon-mw-utils
 	url = http://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "home/.vim/bundle/snipmate-snippets/snippets"]
+	path = home/.vim/bundle/snipmate-snippets/snippets
+	url = http://github.com/scrooloose/snipmate-snippets.git
