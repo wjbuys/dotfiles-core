@@ -26,17 +26,6 @@ go() {
   eval "cd $( $HOME/bin/bookmark $1 )"
 }
 
-# Support for hammer.vim (requires system-installed rubygems)
-setup_hammer_vim()
-{
-  ins rubygems
-  sudo gem install github-markup redcarpet wikicloth
-}
-vim()
-{
-  (unset GEM_PATH GEM_HOME; command vim "$@")
-}
-
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local
 fi
