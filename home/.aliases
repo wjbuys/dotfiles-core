@@ -26,6 +26,21 @@ go() {
   eval "cd $( $HOME/bin/bookmark $1 )"
 }
 
+bundle_commands=( rake spec rspec cucumber cap watchr rails rackup )
+ 
+function run_bundler_cmd () {
+    if [ -r ./Gemfile ]; then
+        bundle exec $@
+    else
+        $@
+    fi
+}
+ 
+for cmd in $bundle_commands
+do
+    alias $cmd="run_bundler_cmd $cmd"
+done
+
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local
 fi
