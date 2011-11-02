@@ -178,3 +178,6 @@
 	path = home/.vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
 	ignore = dirty
+[submodule "home/.vim/bundle/snipmate-snippets/snippets"]
+	path = home/.vim/bundle/snipmate-snippets/snippets
+	url = https://github.com/scrooloose/snippets.git
