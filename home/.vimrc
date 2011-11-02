@@ -19,6 +19,7 @@ set softtabstop=2
 set expandtab
 set list listchars=tab:>-,trail:·,extends:#,nbsp:.
 nmap <silent> <leader>s :set nolist!<CR>
+nmap <Leader>w m`:%s/\s*$<CR>:noh<CR>``
 
 " Searching
 set hlsearch
