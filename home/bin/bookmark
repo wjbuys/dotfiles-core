@@ -27,7 +27,7 @@ class Bookmarks
   def read_bookmarks
     bookmarks = bookmark_file.readlines.map do |line|
       line = line.strip
-      next unless line.any?
+      next if line.empty?
       line.strip.split(" ")
     end
     Hash[bookmarks]
