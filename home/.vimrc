@@ -196,6 +196,27 @@ silent! nnoremap <esc> :noh<return><esc>
 
 " Use normal irb tags to complete % as <% %> in erb
 autocmd FileType eruby let b:surround_37 = "<% \r %>"
+" Wit shortcuts:
+function! WitCheckin(file)
+  echo "Uploading " . a:file
+  let result = system("wit ci ". a:file)
+  echo result
+endfunction
+
+function! WitUpdate()
+  call WitCheckout(expand("%"))
+endfunction
+
+function! WitCheckout(page)
+  echo "Checking out " . a:page
+  let page = substitute(a:page, "\.wiki$", "", "")
+  call system("wit co ". page)
+  edit page . ".wiki"
+endfunction
+
+command! Witci call WitCheckin(@%)
+command! Witup call WitUpdate(<args>)
+command! -nargs=1 Witco call WitCheckout(<args>)
 
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
