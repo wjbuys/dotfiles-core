@@ -76,16 +76,6 @@ outside do
     Irbtools.add_library :wirb, :thread => -1 do Wirb.start end
 
     Irbtools.remove_library :fancy_irb
-    Irbtools.add_library :fancy_irb, :thread => -1 do
-      # Output colorization is slow, and messes up readline navigation
-      FancyIrb.start(
-        :colorize => {
-          :input => nil,
-          :input_prompt => nil,
-          :stdout => nil
-        }
-      )
-    end
     Irbtools.start
 
   end
