@@ -181,3 +181,6 @@
 [submodule "home/.vim/bundle/snipmate-snippets/snippets"]
 	path = home/.vim/bundle/snipmate-snippets/snippets
 	url = https://github.com/scrooloose/snippets.git
+[submodule "home/.vim/bundle/tslime/plugin"]
+	path = home/.vim/bundle/tslime/plugin
+	url = https://github.com/kikijump/tslime.vim.git
