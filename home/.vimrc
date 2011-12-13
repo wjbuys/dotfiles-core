@@ -18,8 +18,9 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:>-,trail:·,extends:#,nbsp:.
-nmap <silent> <leader>s :set nolist!<CR>
-nmap <Leader>w m`:%s/\s*$<CR>:noh<CR>``
+
+command! StripTrailing normal m`:%s/\s*$<CR>:noh<CR>``
+nmap <Leader>sw :StripTrailing<CR>
 
 " Searching
 set hlsearch
@@ -58,6 +59,7 @@ map <Leader><Leader> :ZoomWin<CR>
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
+let g:Tlist_Use_Right_Window = 1
 
 " Remember last location in file
 if has("autocmd")
@@ -143,6 +145,9 @@ set showcmd
 " Use ack-grep for searching
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
+" Find last search term with ack:
+nmap <Leader>* :AckFromSearch<CR>
+
 " enable mouse in terminal
 set mouse=a
 
@@ -196,6 +201,13 @@ silent! nnoremap <esc> :noh<return><esc>
 
 " Use normal irb tags to complete % as <% %> in erb
 autocmd FileType eruby let b:surround_37 = "<% \r %>"
+
+" Kill un-ruby-ish for loops:
+command! Unfor s/\vfor (\i+) in (.*)\s*$/\2.each do |\1|/
+
+" Automatically open the quickfix window:
+autocmd QuickFixCmdPost [^l]* nested cwindow
+
 " Wit shortcuts:
 function! WitCheckin(file)
   echo "Uploading " . a:file
@@ -211,7 +223,7 @@ function! WitCheckout(page)
   echo "Checking out " . a:page
   let page = substitute(a:page, "\.wiki$", "", "")
   call system("wit co ". page)
-  edit page . ".wiki"
+  exec "edit" page . ".wiki"
 endfunction
 
 command! Witci call WitCheckin(@%)
@@ -222,5 +234,34 @@ command! -nargs=1 Witco call WitCheckout(<args>)
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
+
+" Custom bindings for TSlime
+
+function! s:TmuxOperator(type, ...)
+  let sel_save = &selection
+  let &selection = "inclusive"
+  let reg_save = @@
+
+  if a:0  " Invoked from Visual mode, use '< and '> marks.
+    silent exe "normal! `<" . a:type . "`>y"
+  elseif a:type == 'single'
+    silent exe "normal! yy"
+  elseif a:type == 'line'
+    silent exe "normal! '[V']y"
+  elseif a:type == 'block'
+    silent exe "normal! `[\<C-V>`]y"
+  else
+    silent exe "normal! `[v`]y"
+  endif
+
+  call Send_to_Tmux(@@)
+
+  let &selection = sel_save
+  let @@ = reg_save
+endfunction
+
+nmap <silent> <leader><space> :set opfunc=<SID>TmuxOperator<CR>g@
+nmap <silent> <leader><space><space> :call <SID>TmuxOperator('single')<CR>
+vmap <silent> <leader><space> :<C-U>call <SID>TmuxOperator(visualmode(), 1)<CR>
 
 " vim: set ft=vim :
