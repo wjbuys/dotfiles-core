@@ -197,3 +197,12 @@
 [submodule "home/.vim/bundle/vim-abolish"]
 	path = home/.vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+	ignore = dirty
+[submodule "home/.vim/bundle/vim-afterimage"]
+	path = home/.vim/bundle/vim-afterimage
+	url = https://github.com/tpope/vim-afterimage.git
+	ignore = dirty
+[submodule "home/.vim/bundle/vim-commentary"]
+	path = home/.vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+	ignore = dirty
