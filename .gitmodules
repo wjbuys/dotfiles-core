@@ -102,10 +102,6 @@
 	path = home/.vim/bundle/searchfold
 	url = http://github.com/vim-scripts/searchfold.vim.git
 	ignore = dirty
-[submodule "home/.vim/bundle/snipmate"]
-	path = home/.vim/bundle/snipmate
-	url = http://github.com/msanders/snipmate.vim.git
-	ignore = dirty
 [submodule "home/.vim/bundle/solarized"]
 	path = home/.vim/bundle/solarized
 	url = http://github.com/altercation/vim-colors-solarized.git
@@ -178,9 +174,7 @@
 	path = home/.vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
 	ignore = dirty
-[submodule "home/.vim/bundle/snipmate-snippets/snippets"]
-	path = home/.vim/bundle/snipmate-snippets/snippets
-	url = https://github.com/scrooloose/snippets.git
 [submodule "home/.vim/bundle/tslime/plugin"]
 	path = home/.vim/bundle/tslime/plugin
 	url = https://github.com/kikijump/tslime.vim.git
+	ignore = dirty
