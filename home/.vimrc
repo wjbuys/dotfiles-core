@@ -15,6 +15,9 @@ syntax on
 " Set encoding
 set encoding=utf-8
 
+" Make plugins faster
+set lazyredraw
+
 " Whitespace stuff
 set nowrap
 set tabstop=2
