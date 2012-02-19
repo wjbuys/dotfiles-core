@@ -170,6 +170,7 @@ endif
 " Quick clipboard access
 set clipboard=unnamed
 map <Leader>r :registers <CR>
+
 " Reformat all
 silent! nmap <unique> <silent> <Leader>f m`gg=G``
 
@@ -187,10 +188,19 @@ cabbrev ack Ack
 cabbrev rview Rview
 cabbrev rcontroller Rcontroller
 cabbrev rmodel Rmodel
+cabbrev git Git
+
+" Some shortcuts for Gitv
+nmap <leader>gv :Gitv --all<cr>
+nmap <leader>gV :Gitv! --all<cr>
+vmap <leader>gV :Gitv! --all<cr>
+
+nmap <leader>gs :Gst<cr>
 
 " Seriously, backups and swapfiles? Just use git.
 set nobackup
 set noswapfile
+
 " Make vim, tmux and Command-T all play nice together:
 map <Esc>[B <Down>
 
