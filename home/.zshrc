@@ -1,4 +1,4 @@
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/.local/bin:$PATH
 [[ -s ~/.zshrc.amazon ]] && source ~/.zshrc.amazon
 [[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
 
