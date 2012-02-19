@@ -1,6 +1,10 @@
 set nocompatible
 
 filetype off
+" Disable Command-T, use cmdp instead
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'command-t')
+
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
@@ -36,11 +40,6 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 " Status bar
 set laststatus=2
 
-" Without setting this, ZoomWin restores windows in a way that causes
-" equalalways behavior to be triggered the next time CommandT is used.
-" This is likely a bludgeon to solve some other issue, but it works
-set noequalalways
-
 " leader char
 let mapleader = ","
 
@@ -49,9 +48,8 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 let NERDQuitOnOpen=1
 silent! nmap <unique> <silent> <Leader>n :NERDTreeToggle<CR>
 
-" Command-T configuration
-silent! nmap <unique> <silent> <Leader>/ :CommandT<CR>
-let g:CommandTMaxHeight=20
+
+let g:ctrlp_map = '<leader>/'
 
 " ZoomWin configuration
 map <Leader><Leader> :ZoomWin<CR>
