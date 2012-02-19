@@ -33,13 +33,6 @@ setopt nocorrectall
 # disable usernames showing up as completions for cd
 setopt NO_CDABLE_VARS
 
-if [ -f $HOME/bin/vim-wrapper ]; then
-  export EDITOR=$HOME/bin/vim-wrapper
-else
-  export EDITOR=`which vim`
-fi
-
 source $HOME/.aliases
-
 
 fpath=(~/.rvm/scripts/zsh/Completion $fpath)
