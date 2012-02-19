@@ -22,6 +22,20 @@ alias bc="bundle console"
 alias ins="sudo aptitude install -y"
 alias search="aptitude search"
 
+alias b="bookmark"
+
+irb() {
+  echo "Stop! Why not use pry instead?"
+
+  if which pry
+  then
+    pry
+  else
+    echo "... because it's not installed :'("
+    command irb
+  fi
+}
+
 go() {
   eval "cd $( $HOME/bin/bookmark $1 )"
 }
