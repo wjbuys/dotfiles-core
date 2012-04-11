@@ -62,10 +62,6 @@
 	path = home/.vim/bundle/matchit
 	url = http://github.com/vim-scripts/matchit.zip.git
 	ignore = dirty
-[submodule "home/.vim/bundle/nerdcommenter"]
-	path = home/.vim/bundle/nerdcommenter
-	url = http://github.com/ddollar/nerdcommenter.git
-	ignore = dirty
 [submodule "home/.vim/bundle/nerdtree"]
 	path = home/.vim/bundle/nerdtree
 	url = http://github.com/scrooloose/nerdtree.git
@@ -149,10 +145,6 @@
 [submodule "home/.vim/bundle/vim-bundler"]
 	path = home/.vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
-	ignore = dirty
-[submodule "home/.vim/bundle/vim-rails"]
-	path = home/.vim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
 	ignore = dirty
 [submodule "home/.vim/bundle/vim-rvm"]
 	path = home/.vim/bundle/vim-rvm
