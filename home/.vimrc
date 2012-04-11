@@ -70,7 +70,7 @@ silent! nmap <unique> <silent> <Leader>n :NERDTreeToggle<CR>
 let g:ctrlp_map = '<leader>/'
 
 " CTags
-map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+command! Ctags :!ctags --sort=yes --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
 
 " Quickly run a ruby script
