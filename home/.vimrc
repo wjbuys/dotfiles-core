@@ -1,6 +1,11 @@
 set nocompatible
 
 filetype off
+
+" Disable AlignMaps (pollutes <Leader> mappings horribly).
+let g:loaded_AlignMapsPlugin = "disabled"
+let g:loaded_cecutil = "disabled"
+
 " Disable Command-T, use cmdp instead
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'command-t')
