@@ -58,7 +58,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 " Status bar
 set laststatus=2
 
-" leader char
+" Leader char
 let mapleader = ","
 
 " NERDTree configuration
@@ -66,7 +66,7 @@ let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
 let NERDQuitOnOpen=1
 silent! nmap <unique> <silent> <Leader>n :NERDTreeToggle<CR>
 
-
+" Ctrlp configuration
 let g:ctrlp_map = '<leader>/'
 
 " ZoomWin configuration
@@ -116,14 +116,6 @@ map <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-" Unimpaired configuration
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
-" Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
@@ -150,6 +142,7 @@ set cursorline
 
 " make the command line window useful, sortof like zsh vi-mode
 nnoremap q: q:i
+nnoremap q/ q/i
 set cmdwinheight=1
 autocmd CmdwinEnter * setlocal nonumber
 autocmd CmdwinEnter * imap <C-c> <esc>:q<return>
@@ -183,7 +176,7 @@ endif
 
 " Run properly in GUI mode
 if has("gui_running")
-    set guifont=Monaco
+    set guifont="Monaco 9"
     set guioptions=rie
     set guicursor+=a:blinkon0
 endif
@@ -195,14 +188,10 @@ map <Leader>r :registers <CR>
 " Reformat all
 silent! nmap <unique> <silent> <Leader>f m`gg=G``
 
-" Make vim, tmux and Command-T all play nice together:
-map <Esc>[B <Down>
-
 " Allow uppercase versions of common commands
 cabbrev W w
 cabbrev X x
 cabbrev Q q
-cabbrev w!! w !sudo tee % >/dev/null
 
 " Allow lowercase versions of some commands
 cabbrev ack Ack
@@ -210,6 +199,9 @@ cabbrev rview Rview
 cabbrev rcontroller Rcontroller
 cabbrev rmodel Rmodel
 cabbrev git Git
+
+" Write file as sudo with :w!!
+cabbrev w!! w !sudo tee % >/dev/null
 
 " Some shortcuts for Gitv
 nmap <leader>gv :Gitv --all<cr>
@@ -228,7 +220,7 @@ map <Esc>[B <Down>
 " <Esc> clears search highlights in normal mode.
 silent! nnoremap <esc> :noh<return><esc>
 
-" Use normal irb tags to complete % as <% %> in erb
+" Use normal erb tags to complete % as <% %> in erb
 autocmd FileType eruby let b:surround_37 = "<% \r %>"
 
 " Kill un-ruby-ish for loops:
@@ -237,35 +229,12 @@ command! Unfor s/\vfor (\i+) in (.*)\s*$/\2.each do |\1|/
 " Automatically open the quickfix window:
 autocmd QuickFixCmdPost [^l]* nested cwindow
 
-" Wit shortcuts:
-function! WitCheckin(file)
-  echo "Uploading " . a:file
-  let result = system("wit ci ". a:file)
-  echo result
-endfunction
-
-function! WitUpdate()
-  call WitCheckout(expand("%"))
-endfunction
-
-function! WitCheckout(page)
-  echo "Checking out " . a:page
-  let page = substitute(a:page, "\.wiki$", "", "")
-  call system("wit co ". page)
-  exec "edit" page . ".wiki"
-endfunction
-
-command! Witci call WitCheckin(@%)
-command! Witup call WitUpdate(<args>)
-command! -nargs=1 Witco call WitCheckout(<args>)
-
 " Include user's local vim config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 
 " Custom bindings for TSlime
-
 function! s:TmuxOperator(type, ...)
   let sel_save = &selection
   let &selection = "inclusive"
