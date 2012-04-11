@@ -126,10 +126,6 @@
 	path = home/.vim/bundle/wikipedia
 	url = http://github.com/vim-scripts/wikipedia.vim.git
 	ignore = dirty
-[submodule "home/.vim/bundle/vim-addon-mw-utils"]
-	path = home/.vim/bundle/vim-addon-mw-utils
-	url = http://github.com/MarcWeber/vim-addon-mw-utils.git
-	ignore = dirty
 [submodule "home/.vim/bundle/vim-jst"]
 	path = home/.vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
