@@ -23,13 +23,19 @@ set encoding=utf-8
 " Make plugins faster
 set lazyredraw
 
-" Whitespace stuff
-set nowrap
+" Tab settings
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:>-,trail:·,extends:#,nbsp:.
+
+" Whitespace handling
+set nolist
+set listchars=tab:▸\ ,trail:⋅,extends:❯,precedes:❮
+
+set linebreak
+set showbreak=⡇
+nmap <silent> <Leader>T :set invlist<CR>
 
 command! StripTrailing normal m`:%s/\s*$<CR>:noh<CR>``
 nmap <Leader>sw :StripTrailing<CR>
