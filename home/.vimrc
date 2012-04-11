@@ -40,6 +40,10 @@ nmap <silent> <Leader>T :set invlist<CR>
 command! StripTrailing normal m`:%s/\s*$<CR>:noh<CR>``
 nmap <Leader>sw :StripTrailing<CR>
 
+" Move single screen line by default
+nnoremap j gj
+nnoremap k gk
+
 " Searching
 set hlsearch
 set incsearch
