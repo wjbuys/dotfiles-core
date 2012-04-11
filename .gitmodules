@@ -209,3 +209,15 @@
 [submodule "home/.vim/bundle/ctrlp.vim"]
 	path = home/.vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "home/.vim/bundle/tagbar"]
+	path = home/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "home/.vim/bundle/confluencewiki.vim"]
+	path = home/.vim/bundle/confluencewiki.vim
+	url = https://github.com/vim-scripts/confluencewiki.vim.git
+[submodule "home/.vim/bundle/vim-perl"]
+	path = home/.vim/bundle/vim-perl
+	url = https://github.com/petdance/vim-perl.git
+[submodule "home/.vim/bundle/vim-slim"]
+	path = home/.vim/bundle/vim-slim
+	url = https://github.com/bbommarito/vim-slim.git
