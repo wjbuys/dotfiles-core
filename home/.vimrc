@@ -69,13 +69,9 @@ silent! nmap <unique> <silent> <Leader>n :NERDTreeToggle<CR>
 " Ctrlp configuration
 let g:ctrlp_map = '<leader>/'
 
-" ZoomWin configuration
-map <Leader><Leader> :ZoomWin<CR>
-
 " CTags
 map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
 map <C-\> :tnext<CR>
-let g:Tlist_Use_Right_Window = 1
 
 " Quickly run a ruby script
 nmap <Leader>R :w<CR>:cgetexpr system('ruby -Ilib:spec' . expand("%"))<CR>:cw<CR>
