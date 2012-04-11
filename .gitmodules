@@ -14,10 +14,6 @@
 	path = home/.vim/bundle/arduino
 	url = http://github.com/vim-scripts/Arduino-syntax-file.git
 	ignore = dirty
-[submodule "home/.vim/bundle/command-t"]
-	path = home/.vim/bundle/command-t
-	url = http://github.com/wincent/Command-T.git
-	ignore = dirty
 [submodule "home/.vim/bundle/csapprox"]
 	path = home/.vim/bundle/csapprox
 	url = http://github.com/godlygeek/csapprox.git
