@@ -48,7 +48,7 @@ td() {
   tmux set default-path ${1:-$(pwd)}
 }
 
-bundle_commands=( rake spec rspec cucumber cap watchr rails rackup )
+bundle_commands=( rake spec rspec cucumber watchr rails rackup )
  
 function run_bundler_cmd () {
     if [ -r ./Gemfile ]; then
