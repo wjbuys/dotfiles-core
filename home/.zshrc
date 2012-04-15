@@ -28,7 +28,11 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails rails3 git ruby deb debian gem ssh-agent vi-mode)
+plugins=(rails rails3 git ruby gem ssh-agent vi-mode)
+
+if [[ `lsb_release -i` == "Ubuntu" ]]; then
+  plugins+=(debian deb)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
