@@ -9,10 +9,6 @@ let g:loaded_cecutil = "disabled"
 " POWERLINE!
 let g:Powerline_symbols = 'fancy'
 
-" Disable Command-T, use cmdp instead
-let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'command-t')
-
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
