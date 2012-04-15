@@ -88,8 +88,7 @@ filetype plugin indent on
 
 " In the cmdline, type %% to insert directory of the current file:
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
+map <Leader>e :e %%
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
