@@ -48,21 +48,6 @@ td() {
   tmux set default-path ${1:-$(pwd)}
 }
 
-bundle_commands=( rake spec rspec cucumber watchr rails rackup )
- 
-function run_bundler_cmd () {
-    if [ -r ./Gemfile ]; then
-        bundle exec $@
-    else
-        $@
-    fi
-}
- 
-for cmd in $bundle_commands
-do
-    alias $cmd="run_bundler_cmd $cmd"
-done
-
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local
 fi
