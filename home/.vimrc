@@ -12,12 +12,13 @@ let g:Powerline_symbols = 'fancy'
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 
-set number
-set ruler
 syntax on
 
-" Set encoding
-set encoding=utf-8
+" Enable screen elements
+set laststatus=2
+set showcmd
+set number
+set ruler
 
 " Make plugins faster
 set lazyredraw
@@ -27,6 +28,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set encoding=utf-8
 
 " Whitespace handling
 set nolist
@@ -39,10 +41,6 @@ nmap <silent> <Leader>T :set invlist<CR>
 command! StripTrailing normal m`:%s/\s*$<CR>:noh<CR>``
 nmap <Leader>sw :StripTrailing<CR>
 
-" Move single screen line by default
-nnoremap j gj
-nnoremap k gk
-
 " Searching
 set hlsearch
 set incsearch
@@ -53,9 +51,6 @@ set smartcase
 set wildmenu
 set wildmode=longest,full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
-
-" Status bar
-set laststatus=2
 
 " Leader char
 let mapleader = ","
@@ -122,8 +117,6 @@ autocmd CmdwinEnter * setlocal nonumber
 autocmd CmdwinEnter * imap <C-c> <esc>:q<return>
 autocmd CmdwinEnter * nmap <C-c> :q<return>
 
-" Show (partial) command in the status line
-set showcmd
 
 " Source the vimrc file after saving it
 " autocmd bufwritepost .vimrc source $MYVIMRC
@@ -161,6 +154,10 @@ map <Leader>r :registers <CR>
 
 " Reformat all
 silent! nmap <unique> <silent> <Leader>f m`gg=G``
+
+" Move single screen line by default
+nnoremap j gj
+nnoremap k gk
 
 " Allow uppercase versions of common commands
 cabbrev W w
