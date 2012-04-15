@@ -248,7 +248,7 @@ function! s:TmuxOperator(type, ...)
     silent exe "normal! `[v`]y"
   endif
 
-  call Send_to_Tmux(@@)
+  call RunVimTmuxCommand(@@)
 
   let &selection = sel_save
   let @@ = reg_save
