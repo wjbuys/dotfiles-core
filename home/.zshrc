@@ -46,6 +46,10 @@ setopt nocorrectall
 # disable usernames showing up as completions for cd
 setopt NO_CDABLE_VARS
 
+export EDITOR="vim"
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
 source $HOME/.aliases
 
 fpath=(~/.rvm/scripts/zsh/Completion $fpath)
