@@ -6,6 +6,9 @@ filetype off
 let g:loaded_AlignMapsPlugin = "disabled"
 let g:loaded_cecutil = "disabled"
 
+" POWERLINE!
+let g:Powerline_symbols = 'fancy'
+
 " Disable Command-T, use cmdp instead
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'command-t')
