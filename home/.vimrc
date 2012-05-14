@@ -64,8 +64,11 @@ silent! nmap <unique> <silent> <Leader>n :NERDTreeToggle<CR>
 let g:ctrlp_map = '<leader>/'
 
 " CTags
-command! Ctags :!ctags --sort=yes --extra=+f -R *<CR><CR>
+command! Ctags call system('ctags --sort=yes --extra=+f -R *') | redraw!
 map <C-\> :tnext<CR>
+
+" Show overview of current file with TagBar
+map <leader>o :TagbarToggle<cr>
 
 " Quickly run a ruby script
 nmap <Leader>R :w<CR>:cgetexpr system('ruby -Ilib:spec' . expand("%"))<CR>:cw<CR>
