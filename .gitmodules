@@ -176,3 +176,6 @@
 [submodule "home/.vim/bundle/vim-powerline"]
 	path = home/.vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "home/.vim/bundle/vim-scala"]
+	path = home/.vim/bundle/vim-scala
+	url = git://github.com/behaghel/vim-scala.git
