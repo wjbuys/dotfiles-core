@@ -142,10 +142,6 @@
 	path = home/.vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
 	ignore = dirty
-[submodule "home/.vim/bundle/vim-rvm"]
-	path = home/.vim/bundle/vim-rvm
-	url = https://github.com/tpope/vim-rvm.git
-	ignore = dirty
 [submodule "home/.vim/bundle/vim-abolish"]
 	path = home/.vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
