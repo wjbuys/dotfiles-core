@@ -105,5 +105,7 @@ hi Ignore	cterm=bold ctermfg=7
 hi Ignore	ctermfg=darkgrey
 hi Error	cterm=bold ctermfg=7 ctermbg=1
 
+highlight diffAdded guifg=#00bf00
+highlight diffRemoved guifg=#df0000
 
 "vim: sw=4
