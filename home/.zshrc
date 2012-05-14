@@ -1,6 +1,5 @@
 export PATH=~/bin:~/.local/bin:$PATH
-[[ -s ~/.zshrc.amazon ]] && source ~/.zshrc.amazon
-[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
+[[ -s ~/.zshrc.local ]] && source ~/.zshrc.local
 
 if [[ -z $TMUX ]]; then
   tmux -2
@@ -31,7 +30,7 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rails rails3 git ruby bundler gem ssh-agent vi-mode)
+plugins=(rbenv taskwarrior rails rails3 git ruby bundler gem ssh-agent vi-mode)
 
 if [[ `lsb_release -i` == "Ubuntu" ]]; then
   plugins+=(debian deb)
@@ -51,5 +50,3 @@ export EDITOR="vim"
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 source $HOME/.aliases
-
-fpath=(~/.rvm/scripts/zsh/Completion $fpath)

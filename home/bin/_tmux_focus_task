@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require 'json'
+
+def tasks(json)
+  return [] if json =~ /No matches/
+
+  json.each_line.map do |l| 
+    l = l.sub /,?\n$/, ''
+    JSON.parse(l) 
+  end
+end
+
+active = tasks(`task export`).find { |t| t["start"] && !t["end"] }
+puts "#{active["id"]}: #{active["description"]}" if active
