@@ -24,6 +24,9 @@ alias search="aptitude search"
 
 alias b="bookmark"
 
+eval "$(hub alias -s)"
+alias g=git
+
 irb() {
   echo "Stop! Why not use pry instead?"
 
