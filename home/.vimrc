@@ -73,6 +73,10 @@ map <leader>o :TagbarToggle<cr>
 " Quickly run a ruby script
 nmap <Leader>R :w<CR>:cgetexpr system('ruby -Ilib:spec' . expand("%"))<CR>:cw<CR>
 
+" Show task list
+command! -nargs=* Task :!task <args> <CR>
+nmap <Leader>t :Task 
+
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
