@@ -1,27 +1,38 @@
 "{{{ Plugin bundles (managed with vim-update-bundles)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundle: Lokaltog/vim-powerline
+" Bundle: tpope/vim-pathogen
+"
+" Bundle: Lokaltog/vim-powerline develop
+" Bundle: bbommarito/vim-slim
 " Bundle: behaghel/vim-scala
 " Bundle: benmills/vimux
 " Bundle: claco/jasmine.vim
+" Bundle: cakebaker/scss-syntax.vim
+" Bundle: ervandew/supertab
+" Bundle: godlygeek/csapprox
 " Bundle: gregsexton/gitv
 " Bundle: kana/vim-textobj-user
 " Bundle: kchmck/vim-coffee-script
 " Bundle: kien/ctrlp.vim
+" Bundle: majutsushi/tagbar
 " Bundle: matchit.zip
 " Bundle: mattn/gist-vim
 " Bundle: michaeljsmith/vim-indent-object
 " Bundle: mileszs/ack.vim
 " Bundle: nelstrom/vim-textobj-rubyblock
+" Bundle: pangloss/vim-javascript
+" Bundle: petdance/vim-perl
 " Bundle: scrooloose/nerdtree
+" Bundle: scrooloose/syntastic
 " Bundle: searchfold.vim
 " Bundle: timcharper/textile.vim
 " Bundle: tpope/vim-abolish
 " Bundle: tpope/vim-bundler
-" Bundle: tpope/vim-cucumber
+" Bundle: tpope/vim-commentary
 " Bundle: tpope/vim-endwise
 " Bundle: tpope/vim-fugitive
 " Bundle: tpope/vim-haml
+" Bundle: tpope/vim-markdown
 " Bundle: tpope/vim-rails
 " Bundle: tpope/vim-rake
 " Bundle: tpope/vim-repeat
@@ -70,10 +81,6 @@ let g:tagbar_type_scala = {
         \ 'm:methods'
     \ ]
 \ }
-
-" Disable AlignMaps (pollutes <Leader> mappings horribly).
-let g:loaded_AlignMapsPlugin = "disabled"
-let g:loaded_cecutil = "disabled"
 
 " POWERLINE!
 let g:Powerline_symbols = 'fancy'
