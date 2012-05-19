@@ -1,11 +1,44 @@
-set nocompatible
-
-filetype off
+"{{{ Plugin bundles (managed with vim-update-bundles)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Bundle: Lokaltog/vim-powerline
+" Bundle: behaghel/vim-scala
+" Bundle: benmills/vimux
+" Bundle: claco/jasmine.vim
+" Bundle: gregsexton/gitv
+" Bundle: kana/vim-textobj-user
+" Bundle: kchmck/vim-coffee-script
+" Bundle: kien/ctrlp.vim
+" Bundle: kikijump/tslime.vim
+" Bundle: matchit.zip
+" Bundle: mattn/gist-vim
+" Bundle: michaeljsmith/vim-indent-object
+" Bundle: mileszs/ack.vim
+" Bundle: nelstrom/vim-textobj-rubyblock
+" Bundle: scrooloose/nerdtree
+" Bundle: searchfold.vim
+" Bundle: timcharper/textile.vim
+" Bundle: tpope/vim-abolish
+" Bundle: tpope/vim-bundler
+" Bundle: tpope/vim-cucumber
+" Bundle: tpope/vim-endwise
+" Bundle: tpope/vim-fugitive
+" Bundle: tpope/vim-haml
+" Bundle: tpope/vim-rails
+" Bundle: tpope/vim-rake
+" Bundle: tpope/vim-repeat
+" Bundle: tpope/vim-surround
+" Bundle: tpope/vim-unimpaired
+" Bundle: vim-ruby/vim-ruby
+" Bundle: wikipedia.vim
+"}}}
 
 "{{{ Pre pathogen load
 "
 " These settings need to hapen before pathogen is invoked:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+
 
 " Use pathogen for managing plugins under .vim/bundle
 runtime bundle/vim-pathogen/autoload/pathogen.vim
