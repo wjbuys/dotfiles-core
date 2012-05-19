@@ -1,8 +1,10 @@
 #!/usr/bin/env ruby
 require "fileutils"
+require "time"
+require "date"
 
 include FileUtils
 
-code = ARGV.first
+code = ARGV.last
 result = eval code if code
 p result if result
