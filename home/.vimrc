@@ -8,7 +8,6 @@
 " Bundle: kana/vim-textobj-user
 " Bundle: kchmck/vim-coffee-script
 " Bundle: kien/ctrlp.vim
-" Bundle: kikijump/tslime.vim
 " Bundle: matchit.zip
 " Bundle: mattn/gist-vim
 " Bundle: michaeljsmith/vim-indent-object

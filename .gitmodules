@@ -10,10 +10,6 @@
 	path = home/.vim/bundle/align
 	url = http://github.com/tsaleh/vim-align.git
 	ignore = dirty
-[submodule "home/.vim/bundle/arduino"]
-	path = home/.vim/bundle/arduino
-	url = http://github.com/vim-scripts/Arduino-syntax-file.git
-	ignore = dirty
 [submodule "home/.vim/bundle/csapprox"]
 	path = home/.vim/bundle/csapprox
 	url = http://github.com/godlygeek/csapprox.git
@@ -129,10 +125,6 @@
 [submodule "home/.vim/bundle/vim-jst"]
 	path = home/.vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
-	ignore = dirty
-[submodule "home/.vim/bundle/tslime/plugin"]
-	path = home/.vim/bundle/tslime/plugin
-	url = https://github.com/kikijump/tslime.vim.git
 	ignore = dirty
 [submodule "home/.vim/bundle/vim-rake"]
 	path = home/.vim/bundle/vim-rake
