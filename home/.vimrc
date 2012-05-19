@@ -29,6 +29,7 @@
 " Bundle: tpope/vim-unimpaired
 " Bundle: vim-ruby/vim-ruby
 " Bundle: wikipedia.vim
+" Static: guard
 "}}}
 
 "{{{ Pre pathogen load
