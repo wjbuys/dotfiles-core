@@ -15,4 +15,4 @@ LATEST_RUBY_PATCHED=$LATEST_RUBY-falcon
 
 [[ -d ~/.rbenv/versions/$LATEST_RUBY_PATCHED ]] || (curl https://raw.github.com/gist/2600122/rbenv.sh | sh && ~/.rbenv/bin/rbenv global $LATEST_RUBY_PATCHED)
 
-ensure_gem_installed bundler pry pry-doc
+ensure_gem_installed bundler pry pry-doc pry-nav pry-stack_explorer
