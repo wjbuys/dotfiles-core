@@ -9,8 +9,9 @@ let g:loaded_cecutil = "disabled"
 " POWERLINE!
 let g:Powerline_symbols = 'fancy'
 
-silent! call pathogen#runtime_append_all_bundles()
-silent! call pathogen#helptags()
+" Use pathogen for managing plugins under .vim/bundle
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
 
 syntax on
 
