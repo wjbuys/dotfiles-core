@@ -112,9 +112,6 @@
 [submodule "home/.vim/bundle/scss-syntax.vim"]
 	path = home/.vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
-[submodule "home/.vim/bundle/csapprox"]
-	path = home/.vim/bundle/csapprox
-	url = https://github.com/godlygeek/csapprox.git
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
@@ -133,3 +130,6 @@
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "shared/tomorrow-theme"]
+	path = shared/tomorrow-theme
+	url = git://github.com/chriskempson/tomorrow-theme.git

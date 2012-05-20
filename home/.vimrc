@@ -9,7 +9,7 @@
 " Bundle: claco/jasmine.vim
 " Bundle: cakebaker/scss-syntax.vim
 " Bundle: ervandew/supertab
-" Bundle: godlygeek/csapprox
+" NoBundle: godlygeek/csapprox
 " Bundle: gregsexton/gitv
 " Bundle: kana/vim-textobj-user
 " Bundle: kchmck/vim-coffee-script
@@ -41,6 +41,7 @@
 " Bundle: vim-ruby/vim-ruby
 " Bundle: wikipedia.vim
 " Static: guard
+" Static: tomorrow-theme
 "}}}
 
 "{{{ Pre pathogen load
@@ -116,6 +117,9 @@ filetype plugin indent on
 
 ""{{{ General vim settings:
 
+" Leader char
+let mapleader = ","
+
 " Enable screen elements
 set laststatus=2
 set showcmd
@@ -161,7 +165,12 @@ set modelines=10
 set t_Co=256
 set background=dark
 hi clear
-colorscheme sahara
+
+colorscheme Tomorrow-Night
+map <Leader>cl :colorscheme Tomorrow-Night<cr>
+map <Leader>cm :colorscheme Tomorrow-Night-Eighties<cr>
+map <Leader>ch :colorscheme Tomorrow-Night-Bright<cr>
+
 set cursorline
 
 " enable mouse in terminal
@@ -191,10 +200,6 @@ set clipboard=unnamed
 " Seriously, backups and swapfiles? Just use git.
 set nobackup
 set noswapfile
-
-" Leader char
-let mapleader = ","
-
 
 ""}}}
 ""{{{ Custom commands and keybindings:
@@ -303,7 +308,7 @@ vmap <silent> <leader><space> :<C-U>call <SID>TmuxOperator(visualmode(), 1)<CR>
 
 " Source the vimrc file after saving it
 " Doesn't work with CSApprox.vim :(
-" autocmd bufwritepost .vimrc source $MYVIMRC
+autocmd bufwritepost .vimrc source $MYVIMRC
 
 " Use normal erb tags to complete % as <% %> in erb
 autocmd FileType eruby let b:surround_37 = "<% \r %>"
