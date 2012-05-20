@@ -23,6 +23,7 @@
 " Bundle: nelstrom/vim-textobj-rubyblock
 " Bundle: pangloss/vim-javascript
 " Bundle: petdance/vim-perl
+" Bundle: rainux/vim-desert-warm-256
 " Bundle: scrooloose/nerdtree
 " Bundle: scrooloose/syntastic
 " Bundle: searchfold.vim
@@ -167,10 +168,7 @@ set t_Co=256
 set background=dark
 hi clear
 
-colorscheme Tomorrow-Night
-map <Leader>cl :colorscheme Tomorrow-Night<cr>
-map <Leader>cm :colorscheme Tomorrow-Night-Eighties<cr>
-map <Leader>ch :colorscheme Tomorrow-Night-Bright<cr>
+colorscheme desert-warm-256
 
 set cursorline
 

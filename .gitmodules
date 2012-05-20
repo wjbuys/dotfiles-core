@@ -136,3 +136,6 @@
 [submodule "home/.vim/bundle/tabular"]
 	path = home/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "home/.vim/bundle/vim-desert-warm-256"]
+	path = home/.vim/bundle/vim-desert-warm-256
+	url = https://github.com/rainux/vim-desert-warm-256.git
