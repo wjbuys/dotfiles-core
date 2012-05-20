@@ -24,7 +24,6 @@ alias search="aptitude search"
 
 alias b="bookmark"
 
-eval "$(hub alias -s)"
 alias g=git
 
 irb() {
