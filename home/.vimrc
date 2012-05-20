@@ -10,6 +10,7 @@
 " Bundle: cakebaker/scss-syntax.vim
 " Bundle: ervandew/supertab
 " NoBundle: godlygeek/csapprox
+" Bundle: godlygeek/tabular
 " Bundle: gregsexton/gitv
 " Bundle: kana/vim-textobj-user
 " Bundle: kchmck/vim-coffee-script

@@ -133,3 +133,6 @@
 [submodule "shared/tomorrow-theme"]
 	path = shared/tomorrow-theme
 	url = git://github.com/chriskempson/tomorrow-theme.git
+[submodule "home/.vim/bundle/tabular"]
+	path = home/.vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
