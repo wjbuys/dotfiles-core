@@ -121,21 +121,24 @@
 [submodule "home/.vim/bundle/vim-commentary"]
 	path = home/.vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "home/.vim/bundle/vim-perl"]
-	path = home/.vim/bundle/vim-perl
-	url = https://github.com/petdance/vim-perl.git
 [submodule "home/.vim/bundle/vim-slim"]
 	path = home/.vim/bundle/vim-slim
 	url = https://github.com/bbommarito/vim-slim.git
 [submodule "home/.vim/bundle/supertab"]
 	path = home/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "shared/tomorrow-theme"]
-	path = shared/tomorrow-theme
-	url = git://github.com/chriskempson/tomorrow-theme.git
 [submodule "home/.vim/bundle/tabular"]
 	path = home/.vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
 [submodule "home/.vim/bundle/vim-desert-warm-256"]
 	path = home/.vim/bundle/vim-desert-warm-256
 	url = https://github.com/rainux/vim-desert-warm-256.git
+[submodule "shared/vim-update-bundles"]
+	path = shared/vim-update-bundles
+	url = https://github.com/bronson/vim-update-bundles.git
+[submodule "home/.vim/bundle/mustache.vim"]
+	path = home/.vim/bundle/mustache.vim
+	url = https://github.com/juvenn/mustache.vim.git
+[submodule "home/.vim/bundle/vim-perl"]
+	path = home/.vim/bundle/vim-perl
+	url = https://github.com/petdance/vim-perl.git

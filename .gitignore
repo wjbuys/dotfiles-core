@@ -1,3 +1,4 @@
 *.rbc
 *.bak
 home/.vim/.netrwhist*
+home/.vim/doc

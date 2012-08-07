@@ -2,7 +2,7 @@ export PATH=~/bin:~/.local/bin:$PATH
 [[ -s ~/.zshrc.local ]] && source ~/.zshrc.local
 
 if [[ -z $TMUX ]]; then
-  tmux -2
+  tmux -2 $TMUX_ACTION
 fi
 
 while [[ -z $TMUX ]]; do
