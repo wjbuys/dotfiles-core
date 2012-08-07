@@ -65,8 +65,13 @@ call pathogen#infect()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " NERDTree configuration
-let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-let NERDQuitOnOpen=1
+let NERDTreeIgnore     = ['\.pyc$', '\.rbc$', '\~$']
+let NERDChristmasTree  = 1
+let NERDTreeChDirMode  = 2
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI  = 1
+let NERDTreeDirArrows  = 0
 
 " Tagbar Scala support
 let g:tagbar_type_scala = {
@@ -90,6 +95,7 @@ let g:Powerline_symbols = 'fancy'
 
 " Ctrlp configuration
 let g:ctrlp_map = '<leader>/'
+let g:ctrlp_custom_ignore = 'vendor\/bundle'
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
@@ -107,6 +113,8 @@ let g:gist_open_browser_after_post = 1
 " Use ack-grep for searching
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
+let g:Gitv_OpenHorizontal = 'auto'
+let g:Gitv_CommitStep = 50
 
 " Enable syntax highlighting, plugin loading from runtimepath:
 syntax on
@@ -205,10 +213,11 @@ set noswapfile
 
 " mapping: Toggle the NERDTree window
 silent! nmap <unique> <silent> <Leader>n :NERDTreeToggle<CR>
+silent! nmap <unique> <silent> <Leader>N :NERDTreeFind<CR>
 
 " :Ctags : Generate tags file of current directory in a format optimized for Vim.
 " The 'call system(..) | redraw!' is to prevent the screen from flashing.
-command! Ctags call system('ctags --sort=yes --extra=+f -R *') | redraw!
+command! Ctags call system('ctags --exclude="**/*.js" --sort=yes -R .') | redraw!
 
 " mapping: Go to the next matching tag
 map <C-\> :tnext<CR>
@@ -231,11 +240,9 @@ nmap <Leader>t :Task
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :e %%
 
-
 " mapping: Show the command line window and immediately go to insert mode
 nnoremap q: q:i
 nnoremap q/ q/i
-
 
 " Find last search term with ack:
 nmap <Leader>* :AckFromSearch<CR>
@@ -301,6 +308,18 @@ nmap <silent> <leader><space> :set opfunc=<SID>TmuxOperator<CR>g@
 nmap <silent> <leader><space><space> :call <SID>TmuxOperator('single')<CR>
 vmap <silent> <leader><space> :<C-U>call <SID>TmuxOperator(visualmode(), 1)<CR>
 
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':file ' . new_name
+    exec ':silent !mkdir -p ' . expand('%:h')
+    exec ':w'
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>m :call RenameFile()<cr>
 
 ""}}}
 ""{{{ Various autocmds
