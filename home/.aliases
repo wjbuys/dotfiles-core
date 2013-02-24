@@ -38,14 +38,6 @@ irb() {
   fi
 }
 
-go() {
-  eval "cd $( $HOME/bin/bookmark $1 )"
-}
-
-gd() {
-  cd "$( $HOME/bin/bookmark $1 )"
-}
-
 td() {
   tmux set default-path ${1:-$(pwd)}
 }
