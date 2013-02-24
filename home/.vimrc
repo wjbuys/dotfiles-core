@@ -1,66 +1,62 @@
-"{{{ Plugin bundles (managed with vim-update-bundles)
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundle: tpope/vim-pathogen
+"{{{ Pre vundle load
 "
-" Bundle: Lokaltog/vim-powerline develop
-" Bundle: bbommarito/vim-slim
-" Bundle: behaghel/vim-scala
-" Bundle: benmills/vimux
-" Bundle: claco/jasmine.vim
-" Bundle: cakebaker/scss-syntax.vim
-" Bundle: ervandew/supertab
-" NoBundle: godlygeek/csapprox
-" Bundle: godlygeek/tabular
-" Bundle: gregsexton/gitv
-" Bundle: kana/vim-textobj-user
-" Bundle: kchmck/vim-coffee-script
-" Bundle: kien/ctrlp.vim
-" Bundle: majutsushi/tagbar
-" Bundle: matchit.zip
-" Bundle: mattn/gist-vim
-" Bundle: michaeljsmith/vim-indent-object
-" Bundle: mileszs/ack.vim
-" Bundle: nelstrom/vim-textobj-rubyblock
-" Bundle: pangloss/vim-javascript
-" Bundle: petdance/vim-perl
-" Bundle: rainux/vim-desert-warm-256
-" Bundle: scrooloose/nerdtree
-" Bundle: scrooloose/syntastic
-" Bundle: searchfold.vim
-" Bundle: timcharper/textile.vim
-" Bundle: tpope/vim-abolish
-" Bundle: tpope/vim-bundler
-" Bundle: tpope/vim-commentary
-" Bundle: tpope/vim-endwise
-" Bundle: tpope/vim-fugitive
-" Bundle: tpope/vim-haml
-" Bundle: tpope/vim-markdown
-" Bundle: tpope/vim-rails
-" Bundle: tpope/vim-rake
-" Bundle: tpope/vim-repeat
-" Bundle: tpope/vim-surround
-" Bundle: tpope/vim-unimpaired
-" Bundle: vim-ruby/vim-ruby
-" Bundle: wikipedia.vim
-" Bundle: juvenn/mustache.vim
-" Static: guard
-" Static: tomorrow-theme
-"}}}
-
-"{{{ Pre pathogen load
-"
-" These settings need to hapen before pathogen is invoked:
+" These settings need to happen before vundle is invoked:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype off
 
 
-" Use pathogen for managing plugins under .vim/bundle
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
+" Use vundle for managing plugins under .vim/bundle
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
 "}}}
 
-"{{{ Post pathogen load, pre plugin load
+"{{{ Plugin bundles (managed with Vundle)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "gmarik/vundle"
+Bundle "Lokaltog/vim-powerline"
+Bundle "bbommarito/vim-slim"
+Bundle "behaghel/vim-scala"
+Bundle "benmills/vimux"
+Bundle "claco/jasmine.vim"
+Bundle "cakebaker/scss-syntax.vim"
+Bundle "ervandew/supertab"
+Bundle "godlygeek/tabular"
+Bundle "gregsexton/gitv"
+Bundle "kana/vim-textobj-user"
+Bundle "kchmck/vim-coffee-script"
+Bundle "kien/ctrlp.vim"
+Bundle "majutsushi/tagbar"
+Bundle "matchit.zip"
+Bundle "mattn/gist-vim"
+Bundle "michaeljsmith/vim-indent-object"
+Bundle "mileszs/ack.vim"
+Bundle "nelstrom/vim-textobj-rubyblock"
+Bundle "pangloss/vim-javascript"
+Bundle "petdance/vim-perl"
+Bundle "rainux/vim-desert-warm-256"
+Bundle "scrooloose/nerdtree"
+Bundle "scrooloose/syntastic"
+Bundle "searchfold.vim"
+Bundle "timcharper/textile.vim"
+Bundle "tpope/vim-abolish"
+Bundle "tpope/vim-bundler"
+Bundle "tpope/vim-commentary"
+Bundle "tpope/vim-endwise"
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-haml"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-rake"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-unimpaired"
+Bundle "vim-ruby/vim-ruby"
+Bundle "wikipedia.vim"
+
+"}}}
+
+"{{{ Post vundle load, pre plugin load
 "
 " These settings need to happen before plugins are loaded:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
