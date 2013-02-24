@@ -1,4 +1,13 @@
 export PATH=~/bin:~/.local/bin:$PATH
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(rbenv taskwarrior rails rails3 git ruby bundler gem ssh-agent fasd)
+
+if which lsb_release &> /dev/null && lsb_release -i | grep -qi Ubuntu; then
+  plugins+=(debian deb)
+fi
+
 [[ -s ~/.zshrc.local ]] && source ~/.zshrc.local
 
 if [[ -z $TMUX ]]; then
@@ -27,14 +36,6 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rbenv taskwarrior rails rails3 git ruby bundler gem ssh-agent vi-mode)
-
-if [[ `lsb_release -i` == "Ubuntu" ]]; then
-  plugins+=(debian deb)
-fi
 
 source $ZSH/oh-my-zsh.sh
 
