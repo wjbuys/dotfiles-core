@@ -42,6 +42,7 @@
 " Bundle: tpope/vim-unimpaired
 " Bundle: vim-ruby/vim-ruby
 " Bundle: wikipedia.vim
+" Bundle: juvenn/mustache.vim
 " Static: guard
 " Static: tomorrow-theme
 "}}}
@@ -95,7 +96,9 @@ let g:Powerline_symbols = 'fancy'
 
 " Ctrlp configuration
 let g:ctrlp_map = '<leader>/'
-let g:ctrlp_custom_ignore = 'vendor\/bundle'
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'vendor\/\(bundle\|cache\)',
+  \ }
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
