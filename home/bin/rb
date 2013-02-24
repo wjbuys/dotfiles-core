@@ -1,9 +1,16 @@
 #!/usr/bin/env ruby
 require "fileutils"
+require "pathname"
 require "time"
 require "date"
 
 include FileUtils
+
+def P(*args)
+  Pathname(*args)
+end
+
+P = Pathname
 
 code = ARGV.last
 result = eval code if code
