@@ -137,6 +137,10 @@ set showcmd
 set number
 set ruler
 
+" More natural split behaviour
+set splitright
+" set splitbelow " Moves fugitive status window too :(
+
 " Make plugins faster
 set lazyredraw
 
@@ -263,6 +267,12 @@ nnoremap k gk
 cabbrev W w
 cabbrev X x
 cabbrev Q q
+
+" Navigate splits without <C-W> in normal mode
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " Allow lowercase versions of some commands
 cabbrev ack Ack
