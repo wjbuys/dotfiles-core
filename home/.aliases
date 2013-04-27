@@ -1,7 +1,4 @@
 #!/bin/bash
-alias v='vim -c NERDTree'
-alias gv='gvim -c NERDTree'
-
 alias ll='ls -lAh'
 alias l='ls -CF'
 
