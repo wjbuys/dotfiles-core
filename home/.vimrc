@@ -17,7 +17,6 @@ Bundle "gmarik/vundle"
 Bundle "Lokaltog/vim-powerline"
 Bundle "bbommarito/vim-slim"
 Bundle "behaghel/vim-scala"
-Bundle "benmills/vimux"
 Bundle "claco/jasmine.vim"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "ervandew/supertab"
@@ -51,6 +50,7 @@ Bundle "tpope/vim-rake"
 Bundle "tpope/vim-repeat"
 Bundle "tpope/vim-surround"
 Bundle "tpope/vim-unimpaired"
+Bundle "tpope/vim-dispatch"
 Bundle "vim-ruby/vim-ruby"
 Bundle "wikipedia.vim"
 
@@ -277,35 +277,10 @@ nmap <leader>gs :Gst<cr>
 map <Esc>[B <Down>
 
 " <Esc> clears search highlights in normal mode.
-silent! nnoremap <esc> :noh<return><esc>
+silent! nnoremap <esc> :noh<cr><esc>
 
-" Custom bindings for TSlime
-function! s:TmuxOperator(type, ...)
-  let sel_save = &selection
-  let &selection = "inclusive"
-  let reg_save = @@
-
-  if a:0  " Invoked from Visual mode, use '< and '> marks.
-    silent exe "normal! `<" . a:type . "`>y"
-  elseif a:type == 'single'
-    silent exe "normal! yy"
-  elseif a:type == 'line'
-    silent exe "normal! '[V']y"
-  elseif a:type == 'block'
-    silent exe "normal! `[\<C-V>`]y"
-  else
-    silent exe "normal! `[v`]y"
-  endif
-
-  call RunVimTmuxCommand(@@)
-
-  let &selection = sel_save
-  let @@ = reg_save
-endfunction
-
-nmap <silent> <leader><space> :set opfunc=<SID>TmuxOperator<CR>g@
-nmap <silent> <leader><space><space> :call <SID>TmuxOperator('single')<CR>
-vmap <silent> <leader><space> :<C-U>call <SID>TmuxOperator(visualmode(), 1)<CR>
+" Run tests async
+silent! nmap <Leader>r :Make<cr>
 
 function! RenameFile()
   let old_name = expand('%')
