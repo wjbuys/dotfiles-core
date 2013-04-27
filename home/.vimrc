@@ -179,6 +179,10 @@ hi clear
 
 colorscheme desert-warm-256
 
+" Use the same color for the line number and the Sign columns
+" (where gitgutter and syntastic displays things)
+highlight clear SignColumn
+
 set cursorline
 
 " enable mouse in terminal
@@ -274,6 +278,12 @@ nmap <leader>gv :Gitv --all<cr>
 nmap <leader>gV :Gitv! --all<cr>
 vmap <leader>gV :Gitv! --all<cr>
 nmap <leader>gs :Gst<cr>
+
+" Jump to next/previous changed git hunk:
+
+nmap [d :GitGutterPrevHunk<cr>
+nmap ]d :GitGutterNextHunk<cr>
+
 
 " Make vim, tmux and Command-T all play nice together:
 map <Esc>[B <Down>
