@@ -13,6 +13,7 @@ call vundle#rc()
 
 "{{{ Plugin bundles (managed with Vundle)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle "airblade/vim-gitgutter"
 Bundle "gmarik/vundle"
 Bundle "Lokaltog/vim-powerline"
 Bundle "bbommarito/vim-slim"
