@@ -8,6 +8,7 @@ if which lsb_release &> /dev/null && lsb_release -i | grep -qi Ubuntu; then
   plugins+=(debian deb)
 fi
 
+export TMUX_SHELL=$SHELL
 [[ -s ~/.zshrc.local ]] && source ~/.zshrc.local
 
 if [[ -z $TMUX ]]; then
