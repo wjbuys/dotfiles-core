@@ -11,13 +11,16 @@ fi
 export TMUX_SHELL=$SHELL
 [[ -s ~/.zshrc.local ]] && source ~/.zshrc.local
 
-if [[ -z $TMUX ]]; then
-  tmux -2 $TMUX_ACTION
-fi
+# Dont run tmux if we're root:
+if ! [[ $UID -eq 0 ]]; then
+  if [[ -z $TMUX ]]; then
+    tmux -2 $TMUX_ACTION
+  fi
 
-while [[ -z $TMUX ]]; do
-  tmux -2 attach || break
-done
+  while [[ -z $TMUX ]]; do
+    tmux -2 attach || break
+  done
+fi
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
