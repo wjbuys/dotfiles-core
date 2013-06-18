@@ -18,6 +18,7 @@ Bundle "airblade/vim-gitgutter"
 Bundle "bbommarito/vim-slim"
 Bundle "behaghel/vim-scala"
 Bundle "cakebaker/scss-syntax.vim"
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle "claco/jasmine.vim"
 Bundle "ervandew/supertab"
 Bundle "gmarik/vundle"
