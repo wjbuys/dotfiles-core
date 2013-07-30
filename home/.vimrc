@@ -214,9 +214,21 @@ endif
 
 " Run properly in GUI mode
 if has("gui_running")
-    set guifont="Monaco 9"
-    set guioptions=rie
-    set guicursor+=a:blinkon0
+  set guifont="Monaco 9"
+  set guioptions=rie
+  set guicursor+=a:blinkon0
+endif
+
+" Fix timeout in updating status line in the terminal after insert mode
+" (from http://powerline.readthedocs.org/en/latest/tipstricks.html)
+if ! has("gui_running")
+  set ttimeout
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
 endif
 
 " Quick clipboard access
