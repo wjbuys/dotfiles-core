@@ -12,7 +12,11 @@ export TMUX_SHELL=$SHELL
 [[ -s ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # Dont run tmux if we're root:
-if ! [[ $UID -eq 0 ]]; then
+if [[ $UID -eq 0 ]]; then
+  SKIP_TMUX=true
+fi
+
+if [[ -z "$SKIP_TMUX" ]]; then
   if [[ -z $TMUX ]]; then
     tmux -2 $TMUX_ACTION
   fi
