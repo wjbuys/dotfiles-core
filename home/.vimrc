@@ -138,12 +138,20 @@ set showcmd
 set number
 set ruler
 
+" Powerline already sets the mode
+set noshowmode
+
 " More natural split behaviour
 set splitright
 " set splitbelow " Moves fugitive status window too :(
 
 " Make plugins faster
 set lazyredraw
+
+" Automatically update files that changed externally, and write files on
+" commands that change the buffer
+set autoread
+set autowrite
 
 " Tab settings
 set tabstop=2
@@ -169,6 +177,7 @@ set smartcase
 set wildmenu
 set wildmode=longest,full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
+set complete-=i
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -269,11 +278,18 @@ cabbrev W w
 cabbrev X x
 cabbrev Q q
 
+" Make Y consistent with C and D.  See :help Y.
+nnoremap Y y$
+
 " Navigate splits without <C-W> in normal mode
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Repeat last :s including flags
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
 " Allow lowercase versions of some commands
 cabbrev ack Ack
