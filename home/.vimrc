@@ -75,6 +75,10 @@ let NERDTreeShowHidden = 1
 let NERDTreeMinimalUI  = 1
 let NERDTreeDirArrows  = 0
 
+" Don't map C-j/C-k in NERDTree
+let NERDTreeMapJumpNextSibling = "<C-n>"
+let NERDTreeMapJumpPrevSibling = "<C-p>"
+
 " Tagbar Scala support
 let g:tagbar_type_scala = {
     \ 'ctagstype' : 'Scala',
