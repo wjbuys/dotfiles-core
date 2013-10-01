@@ -296,12 +296,6 @@ cabbrev Q q
 " Make Y consistent with C and D.  See :help Y.
 nnoremap Y y$
 
-" Navigate splits without <C-W> in normal mode
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 " Repeat last :s including flags
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
