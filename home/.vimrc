@@ -105,6 +105,9 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': 'vendor\/\(bundle\|cache\)',
   \ }
 
+let g:ctrlp_user_command =
+  \ ['.git', 'cd %s && git ls-files . -co --exclude-standard']
+
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
