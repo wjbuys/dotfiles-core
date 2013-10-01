@@ -110,6 +110,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_quiet_warnings=1
 let g:syntastic_auto_loc_list=1
 
+" Use rbenv ruby for syntax checks
+let g:syntastic_ruby_mri_exe=$RBENV_ROOT . "/shims/ruby"
+
 " gist-vim defaults
 if has("mac")
   let g:gist_clip_command = 'pbcopy'
