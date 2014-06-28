@@ -276,13 +276,6 @@ nmap <Leader>sw :StripTrailing<CR>
 " mapping: Show overview of current file with TagBar
 map <leader>o :TagbarToggle<cr>
 
-" mapping: Quickly run a ruby script
-nmap <Leader>R :w<CR>:cgetexpr system('ruby -Ilib:spec' . expand("%"))<CR>:cw<CR>
-
-" :Task : Show the TaskWarrior tasklist
-command! -nargs=* Task :!task <args> <CR>
-nmap <Leader>t :Task 
-
 " In the cmdline, type %% to insert directory of the current file:
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :e %%
@@ -342,6 +335,10 @@ silent! nnoremap <esc> :noh<cr><esc>
 
 " Run tests async
 silent! nmap <Leader>r :Make<cr>
+
+" Dispatch last command
+silent! nmap <Leader>R :Dispatch<cr>
+
 
 function! RenameFile()
   let old_name = expand('%')
