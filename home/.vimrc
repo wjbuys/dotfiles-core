@@ -236,6 +236,10 @@ if has("gui_running")
   set guicursor+=a:blinkon0
 endif
 
+if has("gui_macvim")
+  set guifont=Monaco:h14
+endif
+
 " Fix timeout in updating status line in the terminal after insert mode
 " (from http://powerline.readthedocs.org/en/latest/tipstricks.html)
 if ! has("gui_running")
