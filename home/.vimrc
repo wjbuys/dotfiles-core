@@ -7,64 +7,68 @@ filetype off
 
 
 " Use vundle for managing plugins under .vim/bundle
-set runtimepath+=~/.vim/bundle/vundle
-call vundle#rc()
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle (required)
+Plugin 'gmarik/Vundle.vim'
 "}}}
 
 "{{{ Plugin bundles (managed with Vundle)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle "Lokaltog/vim-powerline"
-Bundle "airblade/vim-gitgutter"
-Bundle "behaghel/vim-scala"
-Bundle "cakebaker/scss-syntax.vim"
-Bundle "claco/jasmine.vim"
-Bundle "elixir-lang/vim-elixir"
-Bundle "ervandew/supertab"
-Bundle "gmarik/vundle"
-Bundle "godlygeek/tabular"
-Bundle "gregsexton/gitv"
-Bundle "kana/vim-textobj-user"
-Bundle "kchmck/vim-coffee-script"
-Bundle "kien/ctrlp.vim"
-Bundle "majutsushi/tagbar"
-Bundle "matchit.zip"
-Bundle "mattboehm/vim-accordion"
-Bundle "mattboehm/vim-unstack"
-Bundle "mattn/gist-vim"
-Bundle "michaeljsmith/vim-indent-object"
-Bundle "nelstrom/vim-textobj-rubyblock"
-Bundle "pangloss/vim-javascript"
-Bundle "petdance/vim-perl"
-Bundle "rainux/vim-desert-warm-256"
-Bundle "scrooloose/nerdtree"
-Bundle "scrooloose/syntastic"
-Bundle "searchfold.vim"
-Bundle "slim-template/vim-slim"
-Bundle "t9md/vim-ruby-xmpfilter"
-Bundle "timcharper/textile.vim"
-Bundle "tpope/vim-abolish"
-Bundle "tpope/vim-bundler"
-Bundle "tpope/vim-commentary"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-endwise"
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-haml"
-Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-ragtag"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-rake"
-Bundle "tpope/vim-repeat"
-Bundle "tpope/vim-rsi"
-Bundle "tpope/vim-surround"
-Bundle "tpope/vim-unimpaired"
-Bundle "vim-ruby/vim-ruby"
-Bundle "wikipedia.vim"
-Bundle 'Blackrush/vim-gocode'
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'behaghel/vim-scala'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'claco/jasmine.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'ervandew/supertab'
+Plugin 'gmarik/vundle'
+Plugin 'godlygeek/tabular'
+Plugin 'gregsexton/gitv'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'matchit.zip'
+Plugin 'mattboehm/vim-accordion'
+Plugin 'mattboehm/vim-unstack'
+Plugin 'mattn/gist-vim'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'pangloss/vim-javascript'
+Plugin 'petdance/vim-perl'
+Plugin 'rainux/vim-desert-warm-256'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'searchfold.vim'
+Plugin 'slim-template/vim-slim'
+Plugin 't9md/vim-ruby-xmpfilter'
+Plugin 'timcharper/textile.vim'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rsi'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'wikipedia.vim'
+Plugin 'Blackrush/vim-gocode'
+Plugin 'christoomey/vim-tmux-navigator'
 
 "}}}
 
 "{{{ Post vundle load, pre plugin load
+"
 "
 " These settings need to happen before plugins are loaded:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,6 +140,9 @@ let g:Gitv_CommitStep = 50
 
 " Enable syntax highlighting, plugin loading from runtimepath:
 syntax on
+
+" All Plugins must be configured before the following line
+call vundle#end()
 filetype plugin indent on
 
 "}}}
