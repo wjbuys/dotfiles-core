@@ -113,8 +113,8 @@ let g:ctrlp_user_command =
 
 " Enable syntastic syntax checking
 let g:syntastic_enable_signs=1
-let g:syntastic_quiet_warnings=1
 let g:syntastic_auto_loc_list=1
+let g:syntastic_quiet_messages = {'level': 'warnings'}
 
 " Use rbenv ruby for syntax checks
 let g:syntastic_ruby_mri_exe=$RBENV_ROOT . "/shims/ruby"
