@@ -13,16 +13,13 @@ call vundle#rc()
 
 "{{{ Plugin bundles (managed with Vundle)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'Blackrush/vim-gocode'
 Bundle "Lokaltog/vim-powerline"
 Bundle "airblade/vim-gitgutter"
-Bundle "slim-template/vim-slim"
 Bundle "behaghel/vim-scala"
 Bundle "cakebaker/scss-syntax.vim"
-Bundle 'christoomey/vim-tmux-navigator'
 Bundle "claco/jasmine.vim"
-Bundle "ervandew/supertab"
 Bundle "elixir-lang/vim-elixir"
+Bundle "ervandew/supertab"
 Bundle "gmarik/vundle"
 Bundle "godlygeek/tabular"
 Bundle "gregsexton/gitv"
@@ -40,6 +37,7 @@ Bundle "rainux/vim-desert-warm-256"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 Bundle "searchfold.vim"
+Bundle "slim-template/vim-slim"
 Bundle "t9md/vim-ruby-xmpfilter"
 Bundle "timcharper/textile.vim"
 Bundle "tpope/vim-abolish"
@@ -59,6 +57,8 @@ Bundle "tpope/vim-surround"
 Bundle "tpope/vim-unimpaired"
 Bundle "vim-ruby/vim-ruby"
 Bundle "wikipedia.vim"
+Bundle 'Blackrush/vim-gocode'
+Bundle 'christoomey/vim-tmux-navigator'
 
 "}}}
 
