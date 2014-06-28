@@ -2,24 +2,10 @@
 alias ll='ls -lAh'
 alias l='ls -CF'
 
-alias pl='ps axf | less'
 alias :q=exit
 
 # Always use 256-color tmux
 alias tmux='tmux -2'
-
-alias tnew="TMUX= tmux new-session -d -s"
-alias trename="tmux rename-session"
-
-alias be="bundle exec"
-alias bi="bundle install"
-alias bu="bundle update"
-alias bc="bundle console"
-
-alias ins="sudo aptitude install -y"
-alias search="aptitude search"
-
-alias b="bookmark"
 
 alias g=git
 
