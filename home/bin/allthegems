@@ -1,0 +1,5 @@
+#!/bin/bash
+[[ `gem list -liq bundler` == "false" ]] && gem install bundler --pre
+rbenv rehash
+cd ~/bin && bundle update && rm Gemfile.lock
+rbenv rehash
