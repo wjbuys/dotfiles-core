@@ -16,10 +16,12 @@ Plugin 'gmarik/Vundle.vim'
 
 "{{{ Plugin bundles (managed with Vundle)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin 'Blackrush/vim-gocode'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'behaghel/vim-scala'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'claco/jasmine.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
@@ -62,8 +64,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'wikipedia.vim'
-Plugin 'Blackrush/vim-gocode'
-Plugin 'christoomey/vim-tmux-navigator'
 
 "}}}
 
