@@ -1,0 +1,9 @@
+#!/bin/bash
+volume=${1-'-5db'}
+play --show-progress -c 2 --null synth brownnoise \
+    reverb bass 6 treble -3 echos 0.8 0.9 1000 0.3 1800 0.25 vol $volume
+
+# or:
+#
+#  play --show-progress -c 2 --null synth 01:00 brownnoise \
+#      reverb 19 vol 0dB bass 6 treble -3 repeat 558
