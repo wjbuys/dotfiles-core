@@ -16,6 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 
 "{{{ Plugin bundles (managed with Vundle)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plugin "atdt/vim-mediawiki"
 Plugin 'Blackrush/vim-gocode'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'airblade/vim-gitgutter'
@@ -64,7 +65,6 @@ Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'wikipedia.vim'
 
 "}}}
 
