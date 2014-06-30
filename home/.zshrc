@@ -7,8 +7,6 @@ plugins=(
   fasd
   gem
   git
-  rails
-  rails3
   rbenv
   ruby
   ssh-agent
