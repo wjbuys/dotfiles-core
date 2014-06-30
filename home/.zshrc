@@ -3,14 +3,17 @@ export PATH=~/bin:~/.local/bin:$PATH
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
+  autosuggestions
   bundler
   fasd
   gem
   git
+  history-substring-search
   rbenv
   ruby
   ssh-agent
   taskwarrior
+  tmux
 )
 
 if which lsb_release &> /dev/null && lsb_release -i | grep -qi Ubuntu; then
