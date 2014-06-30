@@ -266,9 +266,13 @@ endif
 " Quick clipboard access
 set clipboard=unnamed
 
-" Seriously, backups and swapfiles? Just use git.
+" Turn off persistent backups and disable swapfiles
 set nobackup
 set noswapfile
+
+" Vim uses backup files to make sure writes are atomic. Put these somewhere
+" that is not the current directory (messes with Guard, for example)
+set backupdir=~/.vim/tmp,/tmp,.
 
 ""}}}
 ""{{{ Custom commands and keybindings:
