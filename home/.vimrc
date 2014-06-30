@@ -121,6 +121,9 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 
+" Enable highlighting of fenced code blocks in .md files
+let g:markdown_fenced_languages = ["ruby", "json", "javascript", "sh"]
+
 " Use rbenv ruby for syntax checks
 let g:syntastic_ruby_mri_exe=$RBENV_ROOT . "/shims/ruby"
 
