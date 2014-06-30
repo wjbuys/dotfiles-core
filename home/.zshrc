@@ -2,7 +2,18 @@ export PATH=~/bin:~/.local/bin:$PATH
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(rbenv taskwarrior rails rails3 git ruby bundler gem ssh-agent fasd)
+plugins=(
+  bundler
+  fasd
+  gem
+  git
+  rails
+  rails3
+  rbenv
+  ruby
+  ssh-agent
+  taskwarrior
+)
 
 if which lsb_release &> /dev/null && lsb_release -i | grep -qi Ubuntu; then
   plugins+=(debian deb)
