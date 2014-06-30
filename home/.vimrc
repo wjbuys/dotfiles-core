@@ -161,6 +161,9 @@ set showcmd
 set number
 set ruler
 
+" Prettier window/fold splits:
+set fillchars=""
+
 " Powerline already sets the mode
 set noshowmode
 
