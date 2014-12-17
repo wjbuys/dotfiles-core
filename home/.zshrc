@@ -51,7 +51,7 @@ export ZSH=$HOME/.oh-my-zsh
 export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment if you want to use tmux window names instead of auto-titling:
-# export DISABLE_AUTO_TITLE="true"
+export DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
