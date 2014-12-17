@@ -3,6 +3,7 @@
 " These settings need to happen before vundle is invoked:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
+syntax on
 filetype off
 
 
@@ -27,7 +28,6 @@ Plugin 'claco/jasmine.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'elzr/vim-json'
 Plugin 'ervandew/supertab'
-Plugin 'gmarik/vundle'
 Plugin 'godlygeek/tabular'
 Plugin 'gregsexton/gitv'
 Plugin 'kana/vim-textobj-user'
@@ -142,9 +142,6 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 let g:Gitv_OpenHorizontal = 'auto'
 let g:Gitv_CommitStep = 50
-
-" Enable syntax highlighting, plugin loading from runtimepath:
-syntax on
 
 " All Plugins must be configured before the following line
 call vundle#end()
