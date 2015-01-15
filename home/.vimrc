@@ -193,7 +193,6 @@ set nolist
 set listchars=tab:▸\ ,trail:⋅,extends:❯,precedes:❮
 set linebreak
 set showbreak=⡇
-nmap <silent> <Leader>T :set invlist<CR>
 
 " Remove comment characters when joining newlines
 set formatoptions+=j
@@ -284,6 +283,11 @@ set backupdir=~/.vim/tmp,/tmp,.
 " mapping: Toggle the NERDTree window
 silent! nmap <unique> <silent> <Leader>n :NERDTreeToggle<CR>
 silent! nmap <unique> <silent> <Leader>N :NERDTreeFind<CR>
+
+" mapping: CrtlP for tags:
+silent! nmap <unique> <silent> <Leader>t :CtrlPBufTag<CR>
+silent! nmap <unique> <silent> <Leader>T :CtrlPTag<CR>
+
 
 " :Ctags : Generate tags file of current directory in a format optimized for Vim.
 " The 'call system(..) | redraw!' is to prevent the screen from flashing.
