@@ -195,6 +195,9 @@ set linebreak
 set showbreak=⡇
 nmap <silent> <Leader>T :set invlist<CR>
 
+" Remove comment characters when joining newlines
+set formatoptions+=j
+
 " Searching
 set hlsearch
 set incsearch
