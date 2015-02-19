@@ -18,7 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 "{{{ Plugin bundles (managed with Vundle)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'atdt/vim-mediawiki'
-Plugin 'Blackrush/vim-gocode'
+Plugin 'fatih/vim-go'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'behaghel/vim-scala'
@@ -72,6 +72,12 @@ Plugin 'vim-ruby/vim-ruby'
 "
 " These settings need to happen before plugins are loaded:
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_auto_type_info = 1
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
 
 " NERDTree configuration
 let NERDTreeIgnore     = ['\.pyc$', '\.rbc$', '\~$']
