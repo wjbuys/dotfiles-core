@@ -1,6 +1,6 @@
 *.rbc
 *.bak
-home/.vim/.netrwhist*
-home/.vim/doc
-home/.vim/tmp/
-home/.vim/bundle/*
+vim/.netrwhist*
+vim/doc
+vim/tmp/
+vim/bundle/*
