@@ -320,6 +320,13 @@ nnoremap q/ q/i
 " Find last search term with ack:
 nmap <Leader>* :AckFromSearch<CR>
 
+" set up xmpfilter to evaluate inline #=> in ruby
+let g:xmpfilter_cmd = "sibwrapper"
+
+" auto insert mark at appropriate spot.
+autocmd FileType ruby nmap <buffer> <Leader>xr <Plug>(seeing_is_believing-run)
+autocmd FileType ruby nmap <buffer> <Leader>xc <Plug>(seeing_is_believing-clean)
+
 " Reformat all
 silent! nmap <unique> <silent> <Leader>f m`gg=G``
 
