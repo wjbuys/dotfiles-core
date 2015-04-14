@@ -11,7 +11,6 @@ plugins=(
   rbenv
   ruby
   ssh-agent
-  taskwarrior
   tmux
 )
 
