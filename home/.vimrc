@@ -325,6 +325,7 @@ let g:xmpfilter_cmd = "sibwrapper"
 
 " auto insert mark at appropriate spot.
 autocmd FileType ruby nmap <buffer> <Leader>xr <Plug>(seeing_is_believing-run)
+autocmd FileType ruby nmap <buffer> <Leader>xx <Plug>(seeing_is_believing-run_-x)
 autocmd FileType ruby nmap <buffer> <Leader>xc <Plug>(seeing_is_believing-clean)
 
 " Reformat all
