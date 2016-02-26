@@ -38,10 +38,11 @@ fi
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.zsh_custom
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-[[ -z $ZSH_THEME ]] && export ZSH_THEME="agnoster"
+[[ -z $ZSH_THEME ]] && export ZSH_THEME="buys"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
