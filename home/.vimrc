@@ -43,6 +43,8 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'pangloss/vim-javascript'
 Plugin 'petdance/vim-perl'
 Plugin 'wjbuys/vim-desert-warm-256'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'searchfold.vim'
@@ -79,6 +81,8 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
+
+let g:rustfmt_autosave = 1
 
 " NERDTree configuration
 let NERDTreeIgnore     = ['\.pyc$', '\.rbc$', '\~$']
