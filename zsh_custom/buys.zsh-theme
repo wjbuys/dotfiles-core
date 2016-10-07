@@ -26,7 +26,26 @@
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
 CURRENT_BG='NONE'
-SEGMENT_SEPARATOR='⮀'
+if [[ "$POWERLINE" == "new" ]]; then
+  # New powerline:
+  left_sep=''
+  left_alt_sep=''
+  right_sep=''
+  right_alt_sep=''
+  symbols_branch=''
+  symbols_readonly=''
+  symbols_linenr=''
+else
+  # Old powerline:
+  left_sep='⮀'
+  left_alt_sep='⮁'
+  right_sep='⮂'
+  right_alt_sep='⮃'
+  symbols_branch='⭠'
+  symbols_readonly='⭤'
+  symbols_linenr='⭡'
+fi
+
 DEEP_BLACK='233'
 
 # Begin a segment
@@ -37,7 +56,7 @@ prompt_segment() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n " ⮁%{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
+    echo -n " $left_alt_sep%{$bg%F{$CURRENT_BG}%}$left_sep%{$fg%} "
   else
     echo -n "%{$bg%}%{$fg%} "
   fi
@@ -48,7 +67,7 @@ prompt_segment() {
 # End the prompt, closing any open segments
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n " ⮁%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+    echo -n " $left_alt_sep%{%k%F{$CURRENT_BG}%}$left_sep"
   else
     echo -n "%{%k%}"
   fi
@@ -92,7 +111,7 @@ prompt_git() {
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats '%u%c'
     vcs_info
-    echo -n "${ref/refs\/heads\//⭠ }${vcs_info_msg_0_}"
+    echo -n "${ref/refs\/heads\//$symbols_branch }${vcs_info_msg_0_}"
   fi
 }
 
@@ -117,7 +136,7 @@ prompt_status() {
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
-  have_kerberos_ticket || symbols+="%{%F{red}%}⭤"
+  have_kerberos_ticket || symbols+="%{%F{red}%}$symbols_readonly"
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
@@ -134,4 +153,4 @@ build_prompt() {
 
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='%{%F{green}%}⮂%{%K{green}%F{'$DEEP_BLACK'}%}⮃ $(rbenv_prompt_info) %{%f%b%k%}'
+RPROMPT='%{%F{green}%}'$right_sep'%{%K{green}%F{'$DEEP_BLACK'}%}'$right_alt_sep' $(rbenv_prompt_info) %{%f%b%k%}'
