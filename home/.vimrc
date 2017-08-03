@@ -153,7 +153,7 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
 " Use ripgrep if it's available:
-let g:ackprg="rg --no-heading --vimgrep"
+let g:ackprg="rg --no-heading --vimgrep -L"
 
 let g:Gitv_OpenHorizontal = 'auto'
 let g:Gitv_CommitStep = 50
