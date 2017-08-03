@@ -44,6 +44,9 @@ apt-update-repo() {
   done
 }
 
+alias t="tree --filelimit 10"
+alias ta="t -a"
+
 if [ -f ~/.aliases.local ]; then
     source ~/.aliases.local
 fi
