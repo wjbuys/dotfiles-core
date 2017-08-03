@@ -245,8 +245,8 @@ highlight clear SignColumn
 
 set cursorline
 
-" enable mouse in terminal
-set mouse=a
+" disable mouse in terminal
+set mouse=
 
 " scroll earlier
 set scrolloff=5
