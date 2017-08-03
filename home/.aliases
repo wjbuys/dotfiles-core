@@ -9,18 +9,6 @@ alias tmux='tmux -2'
 
 alias g=git
 
-irb() {
-  echo "Stop! Why not use pry instead?"
-
-  if which pry
-  then
-    pry
-  else
-    echo "... because it's not installed :'("
-    command irb
-  fi
-}
-
 extract() {
   if [ -f $1 ] ; then
     case $1 in
