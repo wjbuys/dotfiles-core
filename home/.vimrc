@@ -11,6 +11,9 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Leader char
+let mapleader = " "
+
 " let Vundle manage Vundle (required)
 Plugin 'gmarik/Vundle.vim'
 "}}}
@@ -118,7 +121,7 @@ let g:tagbar_type_scala = {
 let g:Powerline_symbols = 'fancy'
 
 " Ctrlp configuration
-let g:ctrlp_map = '<leader>/'
+let g:ctrlp_map = '<Leader>/'
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'vendor\/\(bundle\|cache\)',
   \ }
@@ -169,8 +172,6 @@ filetype plugin indent on
 
 ""{{{ General vim settings:
 
-" Leader char
-let mapleader = ","
 
 " Enable screen elements
 set laststatus=2
@@ -367,10 +368,10 @@ cabbrev rmodel Rmodel
 cabbrev w!! w !sudo tee % >/dev/null
 
 " Some shortcuts for Gitv
-nmap <leader>gv :Gitv --all<cr>
-nmap <leader>gV :Gitv! --all<cr>
-vmap <leader>gV :Gitv! --all<cr>
-nmap <leader>gs :Gst<cr>
+nmap <Leader>gv :Gitv --all<cr>
+nmap <Leader>gV :Gitv! --all<cr>
+vmap <Leader>gV :Gitv! --all<cr>
+nmap <Leader>gs :Gst<cr>
 
 " Jump to next/previous changed git hunk:
 
@@ -402,7 +403,7 @@ function! RenameFile()
     redraw!
   endif
 endfunction
-map <leader>m :call RenameFile()<cr>
+map <Leader>m :call RenameFile()<cr>
 
 command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
 function! QuickfixFilenames()
