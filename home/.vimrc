@@ -11,34 +11,23 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Leader char
-let mapleader = " "
-
 " let Vundle manage Vundle (required)
 Plugin 'gmarik/Vundle.vim'
 "}}}
 
 "{{{ Plugin bundles (managed with Vundle)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plugin 'atdt/vim-mediawiki'
-Plugin 'fatih/vim-go'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'behaghel/vim-scala'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'claco/jasmine.vim'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'elzr/vim-json'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'gregsexton/gitv'
 Plugin 'kana/vim-textobj-user'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'matchit.zip'
-Plugin 'mattboehm/vim-accordion'
-Plugin 'mattboehm/vim-unstack'
 Plugin 'mattn/gist-vim'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'mileszs/ack.vim'
@@ -46,14 +35,9 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'pangloss/vim-javascript'
 Plugin 'petdance/vim-perl'
 Plugin 'wjbuys/vim-desert-warm-256'
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'searchfold.vim'
-Plugin 'slim-template/vim-slim'
-Plugin 't9md/vim-ruby-xmpfilter'
-Plugin 'timcharper/textile.vim'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-commentary'
@@ -100,25 +84,7 @@ let NERDTreeDirArrows  = 0
 let NERDTreeMapJumpNextSibling = "<C-n>"
 let NERDTreeMapJumpPrevSibling = "<C-p>"
 
-" Tagbar Scala support
-let g:tagbar_type_scala = {
-    \ 'ctagstype' : 'Scala',
-    \ 'kinds'     : [
-        \ 'p:packages:1',
-        \ 'V:values',
-        \ 'v:variables',
-        \ 'T:types',
-        \ 't:traits',
-        \ 'o:objects',
-        \ 'a:aclasses',
-        \ 'c:classes',
-        \ 'r:cclasses',
-        \ 'm:methods'
-    \ ]
-\ }
-
-" POWERLINE!
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
 
 " Ctrlp configuration
 let g:ctrlp_map = '<Leader>/'
@@ -172,6 +138,8 @@ filetype plugin indent on
 
 ""{{{ General vim settings:
 
+" Leader char
+let mapleader = " "
 
 " Enable screen elements
 set laststatus=2
@@ -289,10 +257,6 @@ set clipboard=unnamed
 " Turn off persistent backups and disable swapfiles
 set nobackup
 set noswapfile
-
-" Vim uses backup files to make sure writes are atomic. Put these somewhere
-" that is not the current directory (messes with Guard, for example)
-set backupdir=~/.vim/tmp,/tmp,.
 
 ""}}}
 ""{{{ Custom commands and keybindings:
