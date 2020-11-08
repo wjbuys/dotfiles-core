@@ -8,6 +8,7 @@ alias :q=exit
 alias tmux='tmux -2'
 
 alias g=git
+alias vim=nvim
 
 extract() {
   if [ -f $1 ] ; then
