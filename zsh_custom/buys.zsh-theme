@@ -21,6 +21,7 @@
 # hostname to whether the last call exited with an error to whether background
 # jobs are running in this shell will all be displayed automatically when
 # appropriate.
+POWERLINE=new
 
 ### Segment drawing
 # A few utility functions to make it easy and re-usable to draw segmented prompts
