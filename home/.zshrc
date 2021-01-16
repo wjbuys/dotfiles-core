@@ -11,7 +11,7 @@ plugins=(
 )
 
 if which lsb_release &> /dev/null && lsb_release -i | grep -qi Ubuntu; then
-  plugins+=(debian deb)
+  plugins+=(debian)
 fi
 
 export TMUX_SHELL=$SHELL
