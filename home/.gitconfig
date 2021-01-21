@@ -1,0 +1,29 @@
+[color]
+  ui = true
+[alias]
+  st = status -s
+  ci = commit
+  ca = commit --amend
+  co = checkout
+  br = branch
+  l  = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+  lll = log --graph --pretty=format:'%Cred%H%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --date=relative --all
+  root = rev-parse --show-toplevel
+  aa = add --all
+[core]
+  editor = vim
+[format]
+  pretty = short
+[merge]
+  keepBackup = false;
+  tool = vimdiff
+[push]
+  default = simple
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[include]
+  path = .gitconfig.local
