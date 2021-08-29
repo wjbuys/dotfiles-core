@@ -186,7 +186,7 @@ set smartcase
 
 " Tab completion
 set wildmenu
-set wildmode=longest,full
+set wildmode=longest:full,full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 set complete-=i
 
